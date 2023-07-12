@@ -12,10 +12,10 @@ app.get('/', (req, res)=> {
 })
 
 app.get('/get-all-products', GetAllProducts);
-app.get('/get-single-product', GetSingleProducts); // read
-app.post("/add-new-product", AddNewProduct); // create
-app.patch('/update-product', updateProduct); // update
-app.delete("/delete-product", deleteProduct); // delete
+app.get('/get-single-product', GetSingleProducts);
+app.post("/add-new-product", AddNewProduct);
+app.patch('/update-product', updateProduct);
+app.delete("/delete-product", deleteProduct);
 
 app.listen(8004, ()=>{
     console.log("server running on port 8000")
