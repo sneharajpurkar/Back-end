@@ -34,11 +34,11 @@ app.post('/register', registerMiddleware, register)
 app.post('/login', loginMiddleware, login)
 
 mongoose.connect(process.env.MONGODB_URL).then(() => {
-    console.log("Connected to DB.p2d")
+    console.log("Connected to DB")
 }).catch((error) => {
     console.log("Error while connecting mongodb", error)
 })
 
-app.listen(8003, () => {
+app.listen(8001, () => {
     console.log("Server is listening on port 3000")
 })

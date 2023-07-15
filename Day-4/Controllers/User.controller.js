@@ -1,5 +1,6 @@
 import User from "../Modals/User.modals.js";
-import encrypt from 'encryptjs';
+// import encrypt from 'encryptjs';
+import encrypt from "encryptjs";
 
 export const register = async (req, res) => {
     try {
@@ -9,11 +10,14 @@ export const register = async (req, res) => {
         const isNumberExist = await User.find({ number })
         if (isNumberExist.length) return res.send("Number is already taken..")
 
-        let secretKey = "secretKey";
-        const encryptPass = encrypt.encrypt(password, secretKey, 256);
+        const secretKey = "secretKey";
+        const encryptPass = encrypt.encryptPass(password, secretKey, 256)
 
         const user = new User({
-            name, number, email, password : encryptPass
+            name,
+            number,
+            email,
+            password: encryptPass
         });
         const mongoData = await user.save();
         if (mongoData) {
