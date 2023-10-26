@@ -5,6 +5,10 @@ const userSchema = new Schema({
         type: String,
         requiired: true
     },
+    role: {
+        type: String,
+        requiired: true
+    },
     email: {
         type: String,
         requiired: true

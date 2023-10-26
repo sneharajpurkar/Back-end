@@ -14,12 +14,13 @@ const AllProducts = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: "space-evenly", flexWrap: 'wrap' }}>
+      <h1>All products is here:</h1>
+      <div style={{width: "100%", display: 'flex', justifyContent: "space-evenly", flexWrap: 'wrap' }}>
         {product.map((pro) => (
-          <div  style={{ width: "20%", height: "400px", border: "2px solid black", marginTop: '10px' }}>
+          <div  style={{ width: "20%", height: "400px", border: "2px solid black", marginTop: '25px' }}>
+            <img style={{ width: "100%", height: "75%" }} src={pro.image} alt='productimage' />
             <h3>Name: {pro.name}</h3>
-            <h4>Price: {pro.price}</h4>
-            <img style={{ width: "100%", height: "70%" }} src={pro.image} alt='productimage' />
+            <h3>Price: {pro.price}</h3>
           </div>
         ))}
       </div>
